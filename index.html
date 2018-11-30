@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>fhir meetup</title>
+
+		<meta name="description" content="Slides for netrika conf 2017 about FHIR">
+		<meta name="author" content="Nikolai Ryzhikov">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+    <style>
+     h1, h2, h3 { color: #ea4a35!important; }
+     .reveal section img { background: white; border: none; box-shadow: none; }
+      </style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+
+<section data-markdown><script type="text/template" >
+
+## Pragmatic FHIR
+
+---
+
+Nikolai Ryzhikov CTO of Health Samurai
+
+@niquola (tw, gmail, gh)
+
+</script></section>
+
+
+<section data-markdown><script type="text/template" >
+## Interop problem
+
+----
+
+> Data belongs to patient
+> So your system has to export and import
+
+----
+### Integration is pain
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+
+* Technical interop
+* Semantic interop
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+
+## Quick Hx
+---
+
+* HL7v2
+* DICOM
+* HL7v3 & CDA
+* OpenEHR
+* FHIR (future)
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+
+## What is FHIR?
+
+---
+
+* standard
+* community
+* eco-system
+
+</script></section>
+
+
+<section data-markdown><script type="text/template" >
+
+## What is FHIR?
+
+---
+
+REST service specification (aka swagger)
+
+* Search
+* CRUD
+* History
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+
+## Paradigms
+
+----
+
+* REST*
+* messaging
+* documents
+
+</script></section>
+
+<section data-markdown><script type="text/template">
+## REST API
+```json
+GET /Patient/_search?name=ivan&name=ivanov
+
+HTTP/1.1 200 OK
+Content-Type: fhir/json;charset=utf-8
+Content-Length: length
+
+{
+ "resourceType": "Patient",
+ "name": [{
+    "use": "official",
+    "family": [ "Ivanov" ],
+    "given": [ "Ivan"]
+ }],
+...
+}
+```
+</script></section>
+
+
+<section data-markdown><script type="text/template" >
+
+### FHIR Resources
+
+![res](res.png)
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+
+### Resource = DDD aggregate
+
+![res](ddd.png)
+
+</script></section>
+
+
+<section data-markdown><script type="text/template" >
+
+### FHIR Resources
+
+![res](domains.png)
+
+</script></section>
+
+
+
+<section data-markdown><script type="text/template" >
+
+### Working Groups
+
+---
+
+* chat.fhir.org
+* calls
+* connectath on tracks
+* wg meetings
+* ballots
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+
+### FHIR Terminology
+
+----
+
+![res](term.jpg)
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+
+### FHIR Terminology
+
+----
+
+![res](vs.png)
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+
+### Extensibility & Profiling
+
+---
+
+![res](ext.jpg)
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+
+## FHIR Community!
+
+----
+
+* chat.fhir.org
+* wiki.hl7.org
+* Connectathons
+* github
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+## Events
+
+---
+
+* ☑ [FHIR App Roundtable: Washington](https://www.youtube.com/channel/UCriLlj4076SRK8yLBPR1hEA)
+* ☑ [Annual Plenary: Baltimore](http://www.hl7.org/events/working_group_meeting/2018/09/)
+* ☑ [FHIR DevDays: Amsterdam 14 Nov](https://www.fhirdevdays.com/amsterdam/)
+* ☐ [FHIR Meetup SPb 1X Dec](https://health-samurai.timepad.ru/)
+* ☐ [WGM:  San Antonio 12 Jan](http://www.hl7.org/events/working_group_meeting/2019/01/)
+* ☐ [HIMSS:  Orlando 11 Feb](http://www.hl7.org/events/working_group_meeting/2019/01/)
+* ☐ Fhirstarter:  SPb Jun 2019?
+
+</script></section>
+
+
+<section data-markdown><script type="text/template" >
+
+## Eco-System
+
+---
+
+* servers
+* libraries
+* tooling
+* ...
+
+</script></section>
+
+
+<section data-markdown><script type="text/template" >
+
+### SMART on FHIR
+
+----
+
+![](smart.png)
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+
+### CDS Hooks
+
+----
+
+![](cds.png)
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+
+### FHIR Analytics & Bulk API
+
+----
+```sql
+SELECT DISTINCT(p.id), p.resource#>'{name,0}'
+FROM patient p
+JOIN observation o ON o.resource#>>'{subject,id}' = p.id
+WHERE (o.resource @> '{"code": {"coding": [{"code": "72166-2"}]}}'::jsonb) -- LOINC: Smoking status
+  AND ((o.resource @> '{"value": {"CodeableConcept": { "coding": [{"code": "449868002"}]}}}') -- SNOMED: Current every day smoker
+       OR (o.resource @> '{"value": {"CodeableConcept": { "coding": [{"code": "8517006"}]}}}')) -- SNOMED: Former smoker
+  AND (extract(year from age(now(), (p.resource->>'birthDate')::date)) > 45) -- patient's age > 45
+  AND (p.resource->>'gender' = 'male'); -- patient gender is male
+
+
+```
+---
+
+https://fbdemo.aidbox.app
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+
+### ONC Open API & Apple Health Kit
+
+----
+
+
+![](apple.png)
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+
+## FHIR Pilots
+
+----
+
+* Finland (Kanta)
+* UK (NHS)
+* Russia (MIAZ SPb, N3)
+* Australia
+* ...
+
+
+</script></section>
+
+
+<section data-markdown><script type="text/template" >
+
+#### Aidbox - FHIR-first development platform
+
+----
+
+![](aidbox.svg)
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+
+### FHIR misconceptions
+
+----
+
+* silver bullet
+* FHIR is simple
+* modeling is hard 
+* interop is hard
+
+---
+
+=> go to community
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+
+### FHIR known problems
+
+----
+
+* version hell
+* profiling is hard
+* extensibility
+
+</script></section>
+
+
+<section data-markdown><script type="text/template" >
+
+### How to use FHIR?
+
+----
+
+1. inspiration
+1. community
+1. integration
+1. internal
+
+</script></section>
+
+<section data-markdown><script type="text/template">
+
+## Thx
+
+</script></section>
+
+
+
+    <script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
