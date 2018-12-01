@@ -62,10 +62,11 @@ Nikolai Ryzhikov CTO of Health Samurai
 ----
 
 > Data belongs to patient
-> So your system has to export and import
+>
+> Your system shell export and import it
 
 ----
-### Integration is pain
+### Integration is (always) pain
 
 </script></section>
 
@@ -85,7 +86,7 @@ Nikolai Ryzhikov CTO of Health Samurai
 * DICOM
 * HL7v3 & CDA
 * OpenEHR
-* FHIR (future)
+* FHIR!
 
 </script></section>
 
@@ -95,12 +96,41 @@ Nikolai Ryzhikov CTO of Health Samurai
 
 ---
 
+* community!
 * standard
-* community
 * eco-system
 
 </script></section>
 
+<section data-markdown><script type="text/template" >
+
+## FHIR Community!
+
+----
+
+* [chat.fhir.org](https://chat.fhir.org)
+* [wiki.hl7.org](http://wiki.hl7.org/index.php?title=Main_Page)
+* [FHIR Foundation](https://www.fhir.org/)              
+* Connectathons & WG Meetings
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+## Events
+
+---
+
+* ☑ [FHIR App Roundtable: Washington](https://www.youtube.com/playlist?list=PL4DUfomz2RZzYblKvgLJ2a8Ut_3wYVZCq)
+* ☑ [Annual Plenary: Baltimore](http://www.hl7.org/events/working_group_meeting/2018/09/)
+* ☑ [FHIR DevDays: Amsterdam 14 Nov](https://www.fhirdevdays.com/amsterdam/)
+* ☐ [FHIR Meetup SPb 1X Dec](https://health-samurai.timepad.ru/)
+* ☐ FHIR Meetup SF 1X Jan?
+* ☐ [WGM:  San Antonio 12 Jan](http://www.hl7.org/events/working_group_meeting/2019/01/)
+* ☐ [HIMSS:  Orlando 11 Feb](http://www.hl7.org/events/working_group_meeting/2019/01/)
+* ☐ Fhirstarter:  SPb Jun 2019?
+
+</script></section>
+
 
 <section data-markdown><script type="text/template" >
 
@@ -108,23 +138,20 @@ Nikolai Ryzhikov CTO of Health Samurai
 
 ---
 
-REST service specification (aka swagger)
+[REST service](http://hl7.org/fhir/http.html) specification (aka swagger)
 
-* Search
 * CRUD
 * History
+* Search
+* Transactions
+
+
 
 </script></section>
 
 <section data-markdown><script type="text/template" >
 
-## Paradigms
-
-----
-
-* REST*
-* messaging
-* documents
+## [FHIR Servers](http://wiki.hl7.org/index.php?title=Publicly_Available_FHIR_Servers_for_testing)
 
 </script></section>
 
@@ -153,6 +180,7 @@ Content-Length: length
 <section data-markdown><script type="text/template" >
 
 ### FHIR Resources
+---
 
 ![res](res.png)
 
@@ -162,6 +190,7 @@ Content-Length: length
 
 ### Resource = DDD aggregate
 
+---
 ![res](ddd.png)
 
 </script></section>
@@ -169,8 +198,9 @@ Content-Length: length
 
 <section data-markdown><script type="text/template" >
 
-### FHIR Resources
+### [FHIR Resources](http://hl7.org/fhir/resourcelist.html)
 
+---
 ![res](domains.png)
 
 </script></section>
@@ -179,7 +209,7 @@ Content-Length: length
 
 <section data-markdown><script type="text/template" >
 
-### Working Groups
+### [Working Groups](http://www.hl7.org/Special/committees/index.cfm?ref=nav)
 
 ---
 
@@ -213,39 +243,27 @@ Content-Length: length
 
 <section data-markdown><script type="text/template" >
 
+### [FHIR Terminology Service](https://www.hl7.org/fhir/terminology-service.html)
+
+----
+
+```
+GET [base]/ValueSet/23/$expand?filter=abdo
+
+GET [base]/CodeSystem/loinc/$lookup?code=1963-8
+
+GET [base]/ValueSet/23/$validate-code?system=http://loinc.org&code=1963-8&display=test
+```
+
+</script></section>
+
+<section data-markdown><script type="text/template" >
+
 ### Extensibility & Profiling
 
 ---
 
 ![res](ext.jpg)
-
-</script></section>
-
-<section data-markdown><script type="text/template" >
-
-## FHIR Community!
-
-----
-
-* chat.fhir.org
-* wiki.hl7.org
-* Connectathons
-* github
-
-</script></section>
-
-<section data-markdown><script type="text/template" >
-## Events
-
----
-
-* ☑ [FHIR App Roundtable: Washington](https://www.youtube.com/channel/UCriLlj4076SRK8yLBPR1hEA)
-* ☑ [Annual Plenary: Baltimore](http://www.hl7.org/events/working_group_meeting/2018/09/)
-* ☑ [FHIR DevDays: Amsterdam 14 Nov](https://www.fhirdevdays.com/amsterdam/)
-* ☐ [FHIR Meetup SPb 1X Dec](https://health-samurai.timepad.ru/)
-* ☐ [WGM:  San Antonio 12 Jan](http://www.hl7.org/events/working_group_meeting/2019/01/)
-* ☐ [HIMSS:  Orlando 11 Feb](http://www.hl7.org/events/working_group_meeting/2019/01/)
-* ☐ Fhirstarter:  SPb Jun 2019?
 
 </script></section>
 
@@ -257,7 +275,7 @@ Content-Length: length
 ---
 
 * servers
-* libraries
+* [libraries](http://wiki.hl7.org/index.php?title=Open_Source_FHIR_implementations#Reference_Libraries)
 * tooling
 * ...
 
@@ -390,6 +408,10 @@ https://fbdemo.aidbox.app
 <section data-markdown><script type="text/template">
 
 ## Thx
+
+---
+
+Join the community
 
 </script></section>
 
